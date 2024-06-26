@@ -1,0 +1,32 @@
+<ion-header class="m-header">
+  <ion-toolbar class="m-header__toolbar">
+    <ion-buttons slot="start" class="m-header__buttons" (click)="_doBack()">
+      <ion-icon name="chevron-back-outline" class="m-header__button -back"></ion-icon>
+    </ion-buttons>
+    <ion-title class="m-header__title no-padding-left no-padding-left pl-15">{{pageHeaderTitle}}<span
+        style="font-weight:900;"></span></ion-title>
+    <ion-buttons slot="end" class="m-header__buttons">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="page-container">
+    <pdf-viewer [src]="pdfSrc" [rotation]="90" [original-size]="false" [show-all]="true"
+      [fit-to-page]="false" [zoom]="zoomLevel" [zoom-scale]="'page-width'" [external-link-target]="'blank'"
+      [stick-to-page]="false" [render-text]="true" [autoresize]="true" [show-borders]="false"
+      style="width: 100%; height:100%;"></pdf-viewer>
+    <div class="file__btns">
+      <div class="file__btns--container">
+        <button type="button" class="file__btns--zoutbtn" (click)="_doZoomOut()"><ion-icon
+            name="add-outline"></ion-icon> </button>
+        <button type="button" class="file__btns--zinbtn" (click)="_doZoomIn()"><ion-icon
+            name="remove-outline"></ion-icon></button>
+      </div>
+    </div>
+  </div>
+  <div class="center" *ngIf="!pdfSrc">
+    <h5 class="error">No Data</h5>
+  </div>
+  <app-apploader *ngIf="isLoading"></app-apploader>
+</ion-content>

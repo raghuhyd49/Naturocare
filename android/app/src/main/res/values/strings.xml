@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">NaturoCare</string>
+    <string name="title_activity_main">NaturoCare</string>
+    <string name="package_name">com.naturocare.app</string>
+    <string name="custom_url_scheme">com.naturocare.app</string>
+</resources>

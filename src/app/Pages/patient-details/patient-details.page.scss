@@ -1,0 +1,115 @@
+@import "../../../theme//variables.scss";
+@import "../../../theme/mixins.scss";
+
+
+
+$name: m-patient;
+$selector: ".#{$name}";
+
+#{$selector} {
+    padding: 20px 10px;
+    height:98%;
+    margin: 5px;
+    border:2px solid  #B8860B;
+
+
+    &__header--logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    &__header--images {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 30px;
+    }
+
+    &__header--info {
+        text-align: center;
+        margin-bottom:30px;
+        color:#B8860B;
+        font-weight: bold;
+
+        &.name {
+            font-size: 16px;
+            margin: 0px
+        }
+
+        &.id {
+            font-size: 15px;
+            margin:8px 0px 0px 0px;
+        }
+    }
+    &__footer-info-seprtr{
+      color:#fff
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border:2px solid  #B8860B;
+        margin-bottom:20px;
+        border-radius: 10px;
+        padding:8px 5px
+    }
+    &__body--left{
+        width:50%;
+    }
+    &__body--right{
+        width:50%;
+    }
+    &__body--leftimages{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+    &__body--rightimages{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+    &__body--left-info{
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        margin:0px 0px 12px 0px;
+        color:#B8860B;
+    }
+    &__body--right-info {
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        margin:0px 0px 12px 0px;
+        color:#B8860B;
+    }
+    &__footer{
+        display:flex;
+        align-items: center;
+        justify-content: space-around;
+        background:#af8c13;
+        border-radius: 5px;
+    }
+    &__footer-info{
+        font-size: 13px;
+        color:#fff
+    }
+    &__bkng{
+        margin-top: 10px;
+        display:flex;
+        align-items: center;
+        justify-content:center;
+    }
+    &__bkng-btn{
+        background: #af8c13;
+        padding: 14px;
+        font-size: 13px;
+        color: #fff;
+        border-radius: 10px;
+    }
+}

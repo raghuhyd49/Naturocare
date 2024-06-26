@@ -1,0 +1,51 @@
+<ion-header class="m-header">
+  <ion-toolbar class="m-header__toolbar">
+    <ion-buttons slot="start" class="m-header__buttons" (click)="_doBack()">
+      <ion-icon name="chevron-back-outline" class="m-header__button -back"></ion-icon>
+    </ion-buttons>
+    <ion-title class="m-header__title no-padding-left no-padding-left pl-15">BMI <span
+        style="font-weight:900;"></span></ion-title>
+    <!-- <ion-buttons slot="end" class="m-header__buttons">
+      <ion-button class="m-header__button">
+        <ion-icon name="calendar"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="m-activity__container">
+    <table class="m-activity__dtable">
+      <thead>
+        <tr>
+          <th colspan="1">Sno</th>
+          <th colspan="2">BMI Details</th>
+          <th colspan="1">Value</th>
+        </tr>
+      </thead>
+      <tbody class="m-activity__table-body" *ngIf="BMIDetails.length != 0">
+        <ng-container *ngFor="let data of BMIDetails">
+          <tr>
+            <th colspan="4">Date: ({{data.date}}) </th>
+          </tr>
+          <ng-container>
+            <tr *ngFor="let items of data.details; let i=index">
+              <td colspan="1">{{i+1}}</td>
+              <td colspan="2">{{items.key}}</td>
+              <td colspan="1">{{items.value?items.value:"NA"}}</td>
+            </tr>
+          </ng-container>
+        </ng-container>
+      </tbody>
+      <tbody *ngIf="BMIDetails.length == 0">
+        <tr>
+          <td class="nodata" colspan="4">
+            No Data Found!
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>
+<app-apploader *ngIf="isLoading"></app-apploader>

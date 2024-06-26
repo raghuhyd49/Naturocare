@@ -1,0 +1,141 @@
+// flex box
+@mixin u-flex {
+  display: flex;
+}
+
+@mixin u-flex-v-align {
+  align-items: center;
+}
+
+@mixin u-flex-h-align {
+  justify-content: center;
+}
+
+@mixin u-flex-h-between-space {
+  justify-content: space-between;
+}
+
+@mixin u-flex-wrap {
+  flex-wrap: wrap;
+}
+
+@mixin u-flex-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin u-flex-direction {
+  flex-direction: column;
+}
+
+@mixin flexColumn($per) {
+  flex: $per;
+}
+
+// grid
+@mixin u-flex-blocks {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@mixin grid($col, $margin) {
+  width: calc((100% - ((#{$col} - 1) * #{$margin})) / #{$col});
+  margin-right: $margin;
+
+  &:nth-child(#{$col}n) {
+    margin-right: 0;
+  }
+}
+
+// circle
+
+@mixin circle($height, $width) {
+  height: #{$height};
+  width: #{$width};
+  border-radius: 50%;
+}
+
+// break points
+
+@mixin breakpoint($point) {
+  @if $point==desktop {
+    @media (min-width: 70em) {
+      @content;
+    }
+  } @else if $point==laptop {
+    @media (min-width: 64em) {
+      @content;
+    }
+  } @else if $point==tablet-lg {
+    @media (min-width: 48em) {
+      @content;
+    }
+  } @else if $point==tablet-md {
+    @media (min-width: 37.5em) {
+      @content;
+    }
+  } @else if $point==tablet-sm {
+    @media (min-width: 30em) {
+      @content;
+    }
+  } @else if $point==mobile-lg {
+    @media (min-width: 25.8em) {
+      @content;
+    }
+  } @else if $point==mobile-md {
+    @media (min-width: 23.4em) {
+      @content;
+    }
+  } @else if $point==mobile-sm {
+    @media (min-width: 22.5em) {
+      @content;
+    }
+  } @else if $point==mobile-xs {
+    @media (max-width: 21.5em) {
+      @content;
+    }
+  }
+}
+
+// box shadow
+
+@mixin boxshadow($x, $y, $blur, $spread, $color) {
+  box-shadow: #{$x}, #{$y}, #{$blur}, #{$spread}, #{$blur};
+}
+
+@mixin boxshadowinset($x, $y, $blur, $spread, $color, $position) {
+  box-shadow: #{$x}, #{$y}, #{$blur}, #{$spread}, #{$blur}, #{$position};
+}
+
+// borders
+
+@mixin border($width, $type, $color) {
+  border: #{$width} #{$type} #{$color};
+}
+
+// background image
+
+@mixin bg-img {
+}
+
+// input placeholder
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+
+  :-moz-placeholder {
+    @content;
+  }
+
+  ::-moz-placeholder {
+    @content;
+  }
+
+  :-ms-input-placeholder {
+    @content;
+  }
+}

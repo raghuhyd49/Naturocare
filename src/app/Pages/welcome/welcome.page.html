@@ -1,0 +1,30 @@
+<ion-header class="m-header">
+  <ion-toolbar class="m-header__toolbar">
+    <ion-buttons slot="start" class="app-header__buttons">
+      <ion-menu-button class="m-header__button-menu">
+        <ion-icon name="ellipsis-vertical-sharp"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-searchbar class="m-search-input" debounce="1500" (ionChange)="_doSearchFilter()"
+      placeholder="Search By Ticket Number" *ngIf="IsShowSearch === true" [(ngModel)]="SearchTerm"></ion-searchbar> -->
+    <ion-title class="m-header__title">Welcome</ion-title>
+    <!-- <ion-progress-bar class="m-loader-progress" type="indeterminate">
+    </ion-progress-bar> -->
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class="">
+  <div class="m-welcome-menu">
+    <div class="m-welcome-menu__container">
+      <div class="m-welcome-menu__list" >
+        <div class="m-welcome-menu__item"  *ngFor="let tab of tabs" (click)="_doNavTopage(tab)">
+          <img src="assets/images/{{tab.icon}}.png"  class="m-welcome-menu__item--icon">
+          <h5 class="m-welcome-menu__item--name">{{tab.title}}</h5>
+        </div>
+      </div>
+      <h5 class="no-data-text" *ngIf="tabs.length === 0">Don't have menu access</h5>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,58 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="main-content">
+  <div class="m-auth">
+    <div class="m-auth__container">
+      <div class="m-auth__header">
+        <span class="m-auth__header--text">Login</span>
+      </div>
+      <div class="m-auth__body">
+        <div class="m-auth__logo">
+          <img style="height: 160px; margin-bottom: 20px;" src="../../../assets/images/manthena.jpg" />
+        </div>
+        <div class="m-auth__card">
+          <ion-list class="m-auth__form">
+            <ion-item class="m-auth__form-item">
+              <ion-label position="floating" class="m-auth__form-item--lbl" color="dark"> <ion-icon slot="start"
+                  name="person" class="m-auth__form-item--icon"></ion-icon>UHID
+                </ion-label>
+              <ion-input type="input" placeholder="Enter UHID" class="m-auth__form-item--input"
+                [(ngModel)]="loginAuthentication.userName"></ion-input>
+            </ion-item>
+            <ion-item class="m-auth__form-item">
+              <ion-label position="floating" class="m-auth__form-item--lbl" color="dark"><ion-icon
+                  class="m-auth__form-item--icon" name="lock-closed"></ion-icon>Password</ion-label>
+              <ion-input style="padding-right:20px" type="{{passwordType}}" placeholder="Enter Password" class="m-auth__form-item--input"
+                [(ngModel)]="loginAuthentication.userpassword"></ion-input>
+              <div class="m-auth__form-item--input-eyeicons" *ngIf="loginAuthentication.userpassword">
+                <ion-icon style="font-size:20px;" *ngIf="passwordType == 'text'" name="eye-outline"
+                  (click)="_doTogglePasswordView('hide')"></ion-icon>
+                <ion-icon style="font-size:20px;" *ngIf="passwordType == 'password'" name="eye-off-outline"
+                  (click)="_doTogglePasswordView('show')"></ion-icon>
+              </div>
+            </ion-item>
+          </ion-list>
+          <div class="m-auth__form--frgtaction">
+            <span (click)="_doForgotPassword()">Forgot Password?</span>
+          </div>
+          <div class="m-auth__form--action-container">
+            <div class="m-auth__form--action-clip-shape"></div>
+            <div class="m-auth__form--action">
+              <button class="m-auth__form--actbtn" type="button" (click)="_doLogin()">Login <ion-icon
+                  name="arrow-forward-outline" style="margin:0px 0px 0px 10px"></ion-icon> </button>
+
+            </div>
+          </div>
+        </div>
+        <!--<div class="m-auth__footer" (click)="_doNavToRegister()">
+          <h5 class="m-auth__footer--btn">Dont have an account ?<b>Sign Up</b></h5>
+        </div>-->
+      </div>
+    </div>
+  </div>
+  <app-apploader *ngIf="isLoading"></app-apploader>
+</ion-content>

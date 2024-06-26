@@ -1,0 +1,16 @@
+<ion-header class="m-header">
+  <ion-toolbar class="m-header__toolbar">
+    <ion-buttons slot="start" class="m-header__buttons" (click)="_doBack()">
+      <ion-icon name="chevron-back-outline" class="m-header__button -back"></ion-icon>
+    </ion-buttons>
+    <ion-title class="m-header__title no-padding-left no-padding-left pl-15">Discharge Summary<span
+        style="font-weight:900;"></span></ion-title>
+    <ion-buttons slot="end" class="m-header__buttons">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scrollX="true" scrollY="true" [fullscreen]="true" [scrollEvents]="true">
+  <ion-button (click)="_doDownload()">DownLoad DischargeSummary</ion-button>
+
+</ion-content>

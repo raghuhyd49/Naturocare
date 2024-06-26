@@ -1,0 +1,203 @@
+@import "../../../theme/mixins.scss";
+@import "../../../theme/mixins.scss";
+
+
+/*===================================
+    Authentication Styles
+====================================*/
+$name: m-auth;
+$selector: ".#{$name}";
+
+#{$selector} {
+    height: 100%;
+    width: 100%;
+
+    &__container {
+        position: relative;
+        height: 100%;
+    }
+
+    &__header {
+        padding-left: 15%;
+        display: flex;
+        align-items: center;
+        background: var(--color-theme);
+        height: 180px;
+        width: 60%;
+        border-bottom-right-radius: 85%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        @include breakpoint(mobile-xs) {
+            height: 150px !important;
+        }
+
+        @include breakpoint(tablet-xs) {
+            height: 300px !important;
+        }
+
+        @include breakpoint(tablet-sm) {
+            height: 350px !important;
+        }
+    }
+
+    &__header--text {
+        color: #ffffff;
+        font-size: 20px;
+        text-transform: uppercase;
+
+        @include breakpoint(mobile-xs) {
+            font-size: 18px !important;
+        }
+
+        @include breakpoint(tablet-xs) {
+            font-size: 2.0rem !important;
+        }
+
+        @include breakpoint(tablet-sm) {
+            font-size: 2.2rem !important;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // padding:20px 0px;
+    }
+
+    &__body {
+        padding: 0px 20px;
+    }
+
+    &__card {
+        position: relative;
+        padding: 0px 0px 30px 0px;
+        width: 100%;
+        margin-bottom: 30px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
+    &__form {
+        padding: 0px 10px;
+    }
+
+    &__form-item {
+        --border-color: #645c64 !important;
+        --border-width: 0 0 1.5px 0 !important;
+        --padding-start: 0px !important;
+        --padding-end: 0px !important;
+        // border-radius: 0px !important;
+        --min-height: auto;
+        padding: 8px 0px;
+        --highlight-height: 0.8px;
+        --highlight-color-focused: #645c64;
+        // --color-activated: red !important;
+        // --color-activated: red !important //--color:red
+    }
+
+    &__form-item--lbl {
+        font-size: 16px;
+        --color: #000 !important;
+
+        @include breakpoint(mobile-xs) {
+            font-size: 14px !important;
+        }
+
+        @include breakpoint(tablet-sm) {
+            font-size: 18px !important;
+        }
+    }
+
+    &__form-item--icon {
+        font-size: 16px;
+        padding: 0px 8px 0px 0px;
+
+        @include breakpoint(mobile-xs) {
+            font-size: 14px !important;
+        }
+
+        @include breakpoint(tablet-sm) {
+            font-size: 18px !important;
+        }
+    }
+
+    &__form-item--input {
+        font-size: 14px !important;
+        position: relative;
+        @include breakpoint(mobile-xs) {
+            font-size: 13px !important;
+        }
+
+        @include breakpoint(tablet-sm) {
+            font-size: 16px !important;
+        }
+    }
+    &__form-item--input-eyeicons{
+        position: absolute;
+        bottom:0px;
+        right:3px;
+
+    }
+
+    &__form--frgtaction {
+        text-align: right;
+        text-decoration: underline;
+        padding:15px 10px;
+        font-size: 14px;
+        color: #063970;
+        font-weight: 600;
+
+        @include breakpoint(mobile-xs) {
+            font-size: 13px !important;
+        }
+
+        @include breakpoint(tablet-sm) {
+            font-size: 16px !important;
+        }
+    }
+
+    &__form--action-container {
+        position: absolute;
+        display: flex;
+        right: 0px;
+    }
+
+    &__form--actbtn {
+        width: 145px;
+        height: 50px;
+        color: #fff;
+        font-size: 18px;
+        background: var(--color-theme);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include breakpoint(mobile-xs) {
+            font-size: 13px !important;
+        }
+
+        @include breakpoint(tablet-sm) {
+            font-size: 16px !important;
+        }
+    }
+
+
+    &__form--action-clip-shape {
+        height: 50px;
+        width: 50px;
+        border: 25px solid var(--color-theme);
+        background: var(--color-theme);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 0%);
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // padding: 20px 0px;
+    }
+
+    &__footer--btn {
+        font-size: 15px;
+    }
+}

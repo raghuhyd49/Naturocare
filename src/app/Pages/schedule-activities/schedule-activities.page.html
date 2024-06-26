@@ -1,0 +1,96 @@
+<ion-header class="m-header">
+  <ion-toolbar class="m-header__toolbar">
+    <ion-buttons slot="start" class="m-header__buttons" (click)="_doBack()">
+      <ion-icon name="chevron-back-outline" class="m-header__button -back"></ion-icon>
+    </ion-buttons>
+    <ion-title class="m-header__title no-padding-left no-padding-left pl-15">{{pageHeaders.title}} <span
+        style="font-weight:900;">( {{pageHeaders.formatedHeaderDate}} )</span></ion-title>
+    <ion-buttons slot="end" class="m-header__buttons">
+      <!-- <ion-button class="m-header__button" (click)="Datepicker()">
+        <ion-icon name="calendar"></ion-icon>
+      </ion-button> -->
+    </ion-buttons>
+
+  </ion-toolbar>
+  <!-- <div class="c-tabs">
+    <div class="c-tabs__container">
+      <div class="c-tabs__list">
+        <div *ngFor="let tab of tabsList;let i=index" class="c-tabs__item {{tab.tabstyle}}" (click)="_doTabAction(tab)">
+          <ion-icon class="c-tabs__item--icon {{tab.tabstyle}}" name={{tab.icon}}></ion-icon>
+          <h5 class="c-tabs__item--name {{tab.tabstyle}}">   {{tab.tabName}}</h5>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</ion-header>
+
+<ion-content>
+  <div class="m-activity">
+    <div class="m-activity__container">
+      <div *ngIf="pageHeaders.title == 'Schedule Actvities'">
+        <div class="m-activity__table-container">
+          <table class="m-activity__table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Activities</th>
+              </tr>
+            </thead>
+            <tbody class="m-activity__table-body" *ngIf="scheduleActivities.length != 0">
+              <tr *ngFor="let activity of scheduleActivities"
+                [ngStyle]="{
+                'background': activity.Type == 'D'?  colorCodes.dietColor : activity.Type == 'T' ? colorCodes.treatmentColor : activity.Type == 'O' ?  this.colorCodes.others : '#fff'}">
+                <td>{{activity.Time}}</td>
+                <td>{{activity.Activity}}</td>
+              </tr>
+            </tbody>
+            <tbody class="m-activity__table-body" *ngIf="scheduleActivities.length == 0">
+              <tr *ngIf="scheduleActivities.length == 0">
+                <td colSpan="2"
+                  style="text-align: center;vertical-align: center;font-size: 20px;color:red;padding:25px;">No Data
+                  Found</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div *ngIf="pageHeaders.title == 'Diet Activities'">
+        <table class="m-activity__dtable">
+          <thead>
+            <tr>
+              <th colspan="1">Sno</th>
+              <th colspan="2">Menu</th>
+              <th colspan="1">Qty</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="!isAllDietsEmpty">
+            <ng-container *ngFor="let data of groupScheduleActivities">
+            <tr *ngIf="data.isShownSchedule">
+              <th colspan="4">{{data.scheduledName}} <span
+                  *ngIf="data.scheduledTimings">({{data.scheduledTimings}})</span></th>
+            </tr>
+            <ng-container *ngIf="data.groupedActivities.length > 0">
+              <tr *ngFor="let menu of data.groupedActivities; let i=index">
+                <td colspan="1">{{i + 1}}</td>
+                <td colspan="2">{{menu}}</td>
+                <td colspan="1">1</td>
+              </tr>
+            </ng-container>
+          </ng-container>
+          </tbody>
+          <tbody *ngIf="isAllDietsEmpty">
+            <tr>
+              <td colspan="4" class="nodata">
+                No Data Found !
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+  <app-apploader *ngIf=" isLoading"></app-apploader>
+</ion-content>

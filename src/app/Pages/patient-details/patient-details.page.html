@@ -1,0 +1,86 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar class="m-header__toolbar">
+    <ion-buttons slot="start" class="m-header__buttons" (click)="_doBack()">
+      <ion-icon name="chevron-back-outline" class="m-header__button -back"></ion-icon>
+    </ion-buttons>
+    <ion-title class="m-header__title no-padding-left no-padding-left pl-15">Patient Details</ion-title>
+    <ion-buttons slot="end" class="m-header__buttons">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header class="m-header">
+  <ion-toolbar class="m-header__toolbar">
+    <ion-buttons slot="start" class="app-header__buttons">
+      <ion-menu-button class="m-header__button-menu">
+        <ion-icon name="ellipsis-vertical-sharp"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-searchbar class="m-search-input" debounce="1500" (ionChange)="_doSearchFilter()"
+      placeholder="Search By Ticket Number" *ngIf="IsShowSearch === true" [(ngModel)]="SearchTerm"></ion-searchbar> -->
+    <ion-title class="m-header__title">Patient Details</ion-title>
+    <!-- <ion-progress-bar class="m-loader-progress" type="indeterminate">
+    </ion-progress-bar> -->
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+
+<ion-content [fullscreen]="true">
+  <div class="m-patient">
+    <div class="m-patient__header">
+      <div class="m-patient__header--logo">
+        <img src="../../../assets/images/manthena.jpg" height="120px">
+      </div>
+      <div class="m-patient__header--images">
+        <img *ngIf="!patientDetails.image" src="../../../assets/images/user.png" height="110px">
+        <img *ngIf="patientDetails.image" src="{{patientDetails.image}}" height="110px" width="110px" style="border:2px solid #154c79;
+        padding: 6px;">
+        <img *ngIf="patientDetails.QRCode" src="{{patientDetails.QRCode}}" height="110px"
+          style="border:3px solid black">
+      </div>
+      <div class="m-patient__header--info">
+        <h5 class="m-patient__header--info name">{{patientDetails.Name}}</h5>
+        <h5 class="m-patient__header--info id">UHID:{{patientDetails.UHId}} </h5>
+      </div>
+    </div>
+    <div class="m-patient__body">
+      <div class="m-patient__body--left">
+        <h5 class="m-patient__body--left-info">Today</h5>
+        <div class="m-patient__body--leftimages">
+          <img src="../../../assets/images/calendar1.png" height="50px"
+            (click)="_doNavToScheduleActivities('today','Schedule Actvities')">
+          <img src="../../../assets/images/dietfood.png" height="60px"
+            (click)="_doNavToScheduleActivities('today','Diet Activities')">
+        </div>
+      </div>
+      <div class="m-patient__body--right">
+        <h5 class="m-patient__body--right-info">Tomorrow</h5>
+        <div class="m-patient__body--rightimages">
+          <img src="../../../assets/images/dietfood.png" height="60px"
+            (click)="_doNavToScheduleActivities('tomorrow','Diet Activities')">
+          <img src="../../../assets/images/calendar2.png" height="50px"
+            (click)="_doNavToScheduleActivities('tomorrow','Schedule Actvities')">
+        </div>
+      </div>
+    </div>
+    <div class="m-patient__footer">
+      <h5 class="m-patient__footer-info" (click)="_doNavToPage('BMI')">BMI</h5>
+      <span class="m-patient__footer-info-seprtr">|</span>
+      <h5 class="m-patient__footer-info" (click)="_doNavToPage('DISUM')">DISUM</h5>
+      <span class="m-patient__footer-info-seprtr">|</span>
+      <h5 class="m-patient__footer-info" (click)="_doNavToPage('MAP')">MAP</h5>
+      <span class="m-patient__footer-info-seprtr">|</span>
+      <h5 class="m-patient__footer-info" (click)="_doNavToPage('DUES')">DUES</h5>
+      <span class="m-patient__footer-info-seprtr">|</span>
+      <h5 class="m-patient__footer-info" (click)="_doNavToPage('PROGRESS')">PROGRESS</h5>
+    </div>
+    <div class="m-patient__bkng">
+     <button class="m-patient__bkng-btn" (click)="_doNavToBrowser('BOOKINGS',patientDetails.bookingURL)"> BOOKINGS</button>
+    </div>
+  </div>
+  <app-apploader *ngIf="isLoading"></app-apploader>
+</ion-content>

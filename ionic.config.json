@@ -1,0 +1,7 @@
+{
+  "name": "NaturoCare",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

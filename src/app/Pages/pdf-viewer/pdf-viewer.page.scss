@@ -1,0 +1,47 @@
+.file__btns {
+    position: absolute;
+    bottom:10%;
+    width: 100%;
+}
+
+.file__btns--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index:99999;
+}
+
+
+.file__btns--zoutbtn {
+    padding: 6px 12px;
+    background: #eee;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-right: 1px solid #000;
+}
+
+
+.file__btns--zinbtn {
+    background: #eee;
+    padding: 6px 12px;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.page-container{
+    height:100%;
+    position: relative;
+    padding:20px 0px 0px 0px;
+    background: #eee;
+    overflow: scroll;
+}
+.error{
+    color:red;
+    font-size: 20px;
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
